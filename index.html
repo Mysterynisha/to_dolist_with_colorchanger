@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DOLIST</title>
+    <style>
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        input {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 8px 16px;
+            font-size: 16px;
+            background-color: rgb(15, 7, 7);
+            color: white;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color:rgb(52, 2, 2);
+            margin: 10px 0;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 50px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        button.remove-btn {
+            background-color: #f44336;
+        }
+
+
+        #bg1{
+             background-color: red;
+        }
+
+        #bg2{
+            background-color: blue;
+        }
+
+        #bg3{
+           background-color: olive;
+        }
+
+        #bg4{
+           background-color: purple;
+        }
+
+
+    </style>
+    
+</head>
+<body>
+    <h2>TO DOLIST &#128640;</h2>
+    <input type="text" placeholder="Enter your To dolist task" id="text">
+    <button onclick="btn()">ADD+</button><br><br>
+
+    <button id="bg1">red</button>
+    <button id="bg2" onclick="bgblue()">blue</button>
+    <button id="bg3">olive</button>
+    <button id="bg4" onclick="bgpink()">pink</button>
+    <button id="bg5">Default</button> 
+
+
+
+        <ul id="details">
+            
+        </ul>
+     
+    <script >
+       
+        function btn(){
+            let node=document.createElement("li");
+            let txt=document.getElementById("text").value;
+
+            
+
+          let btn=document.createElement("button");
+          let btntext=document.createTextNode("REMOVE");
+            btn.appendChild(btntext);
+            let text=document.createTextNode(txt);
+            node.appendChild(text);
+            node.appendChild(btn);
+    
+            document.getElementById("details").appendChild(node);
+    
+    
+            btn.addEventListener('click',(e)=>{
+                document.getElementById("details").removeChild(node);
+            })
+
+        
+            
+           
+        }
+
+        bg1.addEventListener('click',(e)=>{
+                document.body.style.backgroundColor="red";
+            })
+
+
+        function bgblue(){
+                document.body.style.backgroundColor="blue";
+            }
+
+            bg3.addEventListener('click',(e)=>{
+                document.body.style.backgroundColor="olive";
+            })
+        function bgpink(){
+                document.body.style.backgroundColor="purple";
+            }
+
+           bg5.addEventListener('click',(e)=>{
+            document.body.style.backgroundColor="#f0f0f0"
+           }) 
+
+    </script>
+</body>
+</html>
